@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>In Nowhere, Find Purpose</title>
+  <style>
+    body {
+      margin: 0; font-family: sans-serif; background: linear-gradient(to bottom right, #fdf0f4, #e0ecf8); color: #333;
+    }
+    .container { max-width: 800px; margin: auto; padding: 2rem; }
+    .lang-switch { text-align: right; margin-bottom: 1rem; }
+    .hero h1 { font-size: 2rem; }
+    .section { margin: 2rem 0; }
+    .card { background: white; padding: 1rem; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 1rem; }
+    button { margin-left: 0.5rem; }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-switch">
+      <button onclick="setLang('zh')">中</button>
+      <button onclick="setLang('en')">EN</button>
+    </div>
+    <div class="hero section">
+      <h1 id="hero-text">你好，欢迎来到我的个人空间。</h1>
+      <p id="about-text">我是一个热爱写作和记录的创意人。</p>
+    </div>
+    <div class="section">
+      <h2 id="blog-title">随笔精选</h2>
+      <div class="card">
+        <h3>写作标题一 / Title One</h3>
+        <p>简要介绍或节选...</p>
+      </div>
+      <div class="card">
+        <h3>写作标题二 / Title Two</h3>
+        <p>简要介绍或节选...</p>
+      </div>
+    </div>
+    <div class="section">
+      <h2 id="contact-title">联系我</h2>
+      <p>Email: your@email.com</p>
+      <p>Instagram / WeChat / etc.</p>
+    </div>
+  </div>
+
+  <script>
+    const langText = {
+      zh: {
+        hero: "你好，欢迎来到我的个人空间。",
+        about: "我是一个热爱写作和记录的创意人。",
+        blog: "随笔精选",
+        contact: "联系我"
+      },
+      en: {
+        hero: "Hi, welcome to my personal site.",
+        about: "I'm a creative person who loves writing and reflection.",
+        blog: "Selected Writings",
+        contact: "Contact Me"
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById('hero-text').innerText = langText[lang].hero;
+      document.getElementById('about-text').innerText = langText[lang].about;
+      document.getElementById('blog-title').innerText = langText[lang].blog;
+      document.getElementById('contact-title').innerText = langText[lang].contact;
+    }
+  </script>
+</body>
+</html>
